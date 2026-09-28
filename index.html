@@ -6,8 +6,8 @@
 <meta name="description" content="GATOX USA Camp 2026 · Deerfield Beach, FL · 4–9 octubre. Uniformes, lista de equipaje, agenda, lugares y contactos.">
 <meta property="og:title" content="GATOX USA Camp 2026">
 <meta property="og:description" content="Deerfield Beach, FL · Oct 4–9, 2026">
-<meta property="og:image" content="img/patch.jpg">
-<link rel="icon" href="img/patch.jpg">
+<meta property="og:image" content="patch.jpg">
+<link rel="icon" href="patch.jpg">
 <title>GATOX USA Camp 2026</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -265,14 +265,14 @@ footer ul{margin:10px 0 0;padding-left:18px;display:grid;gap:3px}
         <a class="btn ghost" href="#agenda"><span class="es">Ver agenda</span><span class="en">See schedule</span></a>
       </div>
     </div>
-    <div class="patch"><img src="img/patch.jpg" alt="GATOX USA Camp 2026 patch"></div>
+    <div class="patch"><img src="patch.jpg" alt="GATOX USA Camp 2026 patch"></div>
   </div>
 </section>
 
 <div class="partners">
   <div class="wrap">
     <span class="lbl"><span class="es">En alianza con</span><span class="en">In partnership with</span></span>
-    <div class="partner"><img src="img/logo.jpg" alt=""><span>GATOX Basketball Club<small>Colombia</small></span></div>
+    <div class="partner"><img src="logo.jpg" alt=""><span>GATOX Basketball Club<small>Colombia</small></span></div>
     <div class="partner"><span class="mark">DB</span><span><span class="es">Ciudad de Deerfield Beach</span><span class="en">City of Deerfield Beach</span><small>Florida</small></span></div>
     <a class="partner" href="https://www.legacybballacademy.com/" target="_blank" rel="noopener"><span class="mark">L</span><span>Legacy Basketball Academy<small>Homestead · Miami</small></span></a>
   </div>
@@ -319,9 +319,9 @@ footer ul{margin:10px 0 0;padding-left:18px;display:grid;gap:3px}
     </div>
     <div class="uniform">
       <div style="display:grid;gap:10px"><div class="kit-photo">
-        <img src="img/uniform.jpg" alt="Official GATOX USA Camp 2026 uniform, front and back" onerror="this.remove();document.getElementById('kitfb').hidden=false">
+        <img src="uniform.jpg" alt="Official GATOX USA Camp 2026 uniform, front and back" onerror="this.remove();document.getElementById('kitfb').hidden=false">
         <div class="kit-fallback" id="kitfb" hidden>
-          <img src="img/logo.jpg" alt="">
+          <img src="logo.jpg" alt="">
           <p><span class="es">Uniforme oficial GATOX · azul marino</span><span class="en">Official GATOX uniform · navy</span></p>
         </div>
       </div><p class="eyebrow" style="color:var(--muted)"><span class="es">Uniforme oficial · clínicas en Deerfield Beach</span><span class="en">Official uniform · Deerfield Beach clinics</span></p></div>
@@ -438,7 +438,7 @@ footer ul{margin:10px 0 0;padding-left:18px;display:grid;gap:3px}
 
 <footer>
   <div class="wrap">
-    <div class="flogo"><img src="img/logo.jpg" alt="GATOX Basketball Club"><span>GATOX Basketball Club · USA Camp 2026 · Deerfield Beach, Florida</span></div>
+    <div class="flogo"><img src="logo.jpg" alt="GATOX Basketball Club"><span>GATOX Basketball Club · USA Camp 2026 · Deerfield Beach, Florida</span></div>
     <p><span class="es">La agenda puede cambiar. Esta página se actualiza con la última versión.</span><span class="en">The schedule may change. This page is updated with the latest version.</span></p>
     <details>
       <summary><span class="es">Créditos de fotos</span><span class="en">Photo credits</span></summary>
@@ -624,7 +624,7 @@ const PLACES=[
  {img:'beach',when:L('Vie 9','Fri 9'),kind:L('Entrenamiento','Training'),name:'Fort Lauderdale Beach',
   d:L('Entrenamiento en las canchas de baloncesto de Central Beach, junto a la arena y el océano Atlántico.','Training on the Central Beach basketball courts, right by the sand and the Atlantic Ocean.'),p:'beach'},
 ];
-document.getElementById('places').innerHTML=PLACES.map(x=>`<article class="place"><figure><img src="img/${x.img}.jpg" alt="${x.name}" loading="lazy"><span class="when">${x.when}</span></figure><div class="body"><span class="kind">${x.kind}</span><h3>${x.name}</h3><p>${x.d}</p><div class="addr"><span>${P[x.p][1]}</span><a href="${map(P[x.p][0]+', '+P[x.p][1])}" target="_blank" rel="noopener">${L('Mapa','Map')} ↗</a></div></div></article>`).join('');
+document.getElementById('places').innerHTML=PLACES.map(x=>`<article class="place"><figure><img src="${x.img}.jpg" alt="${x.name}" loading="lazy"><span class="when">${x.when}</span></figure><div class="body"><span class="kind">${x.kind}</span><h3>${x.name}</h3><p>${x.d}</p><div class="addr"><span>${P[x.p][1]}</span><a href="${map(P[x.p][0]+', '+P[x.p][1])}" target="_blank" rel="noopener">${L('Mapa','Map')} ↗</a></div></div></article>`).join('');
 
 /* credits */
 const CR=[["Deerfield Beach","deerfield","LuizCent","CC BY-SA 4.0","https://commons.wikimedia.org/wiki/File:Deerfield_beach_pier.jpg"],["Homestead","homestead","Hopelessrailfan","CC BY-SA 4.0","https://commons.wikimedia.org/wiki/File:Two_City_of_Homestead_tourist_trolleys.jpg"],["Zoo Miami","zoo","Averette","CC BY 3.0","https://commons.wikimedia.org/wiki/File:Flamingos_Miami_MetroZoo.jpg"],["Sawgrass Mills","sawgrass","Cmasi","CC BY-SA 4.0","https://commons.wikimedia.org/wiki/File:Sawgrass_Mills_180133.jpg"],["Lynn University","lynn","Handrieu","CC BY-SA 4.0","https://commons.wikimedia.org/wiki/File:Lynn_University_Boca_Raton_Entrance.jpg"],["FAU Arena","fau","Florida Atlantic University","Public domain","https://commons.wikimedia.org/wiki/File:FAU_Arena_2.jpeg"],["Kaseya Center","kaseya","Gatorfan252525","CC BY-SA 4.0","https://commons.wikimedia.org/wiki/File:Kaseya_Center_prior_to_a_Miami_Heat_game_during_the_2024-25_season.jpg"],["Las Olas Blvd","lasolas","Infrogmation","CC BY-SA 4.0","https://commons.wikimedia.org/wiki/File:Las_Olas_Boulevard,_Fort_Lauderdale,_Florida_02.jpg"],["Guitar Hotel","hardrock","Benoît Prieur","CC0","https://commons.wikimedia.org/wiki/File:The_Guitar_Hotel_depuis_l%27autoroute_en_f%C3%A9vrier_2022.JPG"],["Fort Lauderdale Beach","beach","EgorovaSvetlana","CC BY-SA 4.0","https://commons.wikimedia.org/wiki/File:Central_Beach_Fort_Lauderdale_Beach_Florida_Atlantic_Coast.jpg"]];
