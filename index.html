@@ -332,7 +332,7 @@ footer ul{margin:10px 0 0;padding-left:18px;display:grid;gap:3px}
         </div>
         <div class="rule game">
           <div class="when"><span class="chip c-game"><span class="es">Uniforme oficial</span><span class="en">Official uniform</span></span><h3 style="font-size:1.25rem"><span class="es">Clínicas en Deerfield Beach</span><span class="en">Deerfield Beach clinics</span></h3></div>
-          <p><span class="es">El uniforme azul marino de la foto. Se usa en todas las clínicas del Johnny L. Tinger Community Center, con la Ciudad de Deerfield Beach (lun, mar, mié y vie).</span><span class="en">The navy uniform in the photo. Worn at every clinic at the Johnny L. Tinger Community Center with the City of Deerfield Beach (Mon, Tue, Wed and Fri).</span></p>
+          <p><span class="es">El uniforme azul marino de la foto. Se usa en todas las clínicas del Johnny L. Tinger Community Center, con la Ciudad de Deerfield Beach (mar, mié y vie).</span><span class="en">The navy uniform in the photo. Worn at every clinic at the Johnny L. Tinger Community Center with the City of Deerfield Beach (Tue, Wed and Fri).</span></p>
         </div>
         <div class="rule">
           <div class="when"><span class="chip c-prac"><span class="es">Uniforme de práctica</span><span class="en">Practice uniform</span></span><h3 style="font-size:1.25rem"><span class="es">Mañanas en Legacy Academy</span><span class="en">Mornings at Legacy Academy</span></h3></div>
@@ -534,7 +534,7 @@ const DAYS=[
   [L('Desde 4:00 PM','From 4:00 PM'),L('Llegada y check-in en el hotel · la entrada anticipada se puede pedir, pero no está garantizada','Arrival and hotel check-in · early check-in can be requested but is not guaranteed'),'hotel',null,'quiet'],
   ['5:00 – 7:00 PM',L('Reunión de apertura con padres y jugadores · entrega del uniforme oficial','Opening meeting with parents and players · official uniform handout'),'hotel',null,'hl'],
  ]},
- {n:5,dow:L('Lunes','Monday'),tag:L('Práctica + Sawgrass','Practice + Sawgrass'),rows:[
+ {n:5,dow:L('Lunes','Monday'),tag:L('Práctica + Sawgrass + Las Olas','Practice + Sawgrass + Las Olas'),rows:[
   BF,
   ['10:00 AM – 12:00 PM',L('Práctica','Practice'),'legacy',PR],
   ['12:00 – 1:00 PM',TRS,null,null,'quiet'],
@@ -543,9 +543,11 @@ const DAYS=[
   ['3:00 – 5:00 PM',L('Visita a Sawgrass Mills','Visit Sawgrass Mills'),'saw',K],
   ['5:00 – 6:00 PM',TRS,null,null,'quiet'],
   ['6:00 PM',L('Regreso','Return travel'),null,null,'quiet'],
-  ['7:00 – 9:00 PM',L('Clínica deportiva','Sports clinic'),'tinger',G],
+  ['7:00 – 8:00 PM',L('Visita a Las Olas Blvd','Visit Las Olas Blvd'),'olas',K],
+  ['8:00 – 9:00 PM',TRS,null,null,'quiet'],
+  ['9:00 PM',L('Seminole Hard Rock Cafe','Seminole Hard Rock Cafe'),'hr',K],
  ]},
- {n:6,dow:L('Martes','Tuesday'),tag:L('Zoo + Las Olas','Zoo + Las Olas'),rows:[
+ {n:6,dow:L('Martes','Tuesday'),tag:L('Zoo + clínicas','Zoo + clinics'),rows:[
   BF,
   ['10:00 AM – 1:00 PM',L('Visita + almuerzo en Zoo Miami','Zoo Miami visit + lunch'),'zoo',K],
   ['1:00 – 2:00 PM',TRS,null,null,'quiet'],
@@ -554,9 +556,7 @@ const DAYS=[
   ['4:00 – 5:00 PM',TRS,null,null,'quiet'],
   ['5:00 – 6:00 PM',L('Clínica deportiva','Sports clinic'),'tinger',G],
   ['6:00 – 7:00 PM',TRS,null,null,'quiet'],
-  ['7:00 – 8:00 PM',L('Visita a Las Olas Blvd','Visit Las Olas Blvd'),'olas',K],
-  ['8:00 – 9:00 PM',TRS,null,null,'quiet'],
-  ['9:00 PM',L('Seminole Hard Rock Cafe','Seminole Hard Rock Cafe'),'hr',K],
+  ['7:00 – 9:00 PM',L('Clínica deportiva','Sports clinic'),'tinger',G],
  ]},
  {n:7,dow:L('Miércoles','Wednesday'),tag:L('Lynn + FAU','Lynn + FAU'),rows:[
   BF,
@@ -617,9 +617,9 @@ const PLACES=[
   d:L('La fiesta de inicio de temporada de los Owls de Florida Atlantic University, equipo que llegó al Final Four de la NCAA en 2023. En el Eleanor R. Baldwin Arena.','The season tip-off party for the Florida Atlantic University Owls, the team that reached the 2023 NCAA Final Four. Held at Eleanor R. Baldwin Arena.'),p:'fau'},
  {img:'kaseya',when:L('Jue 8','Thu 8'),kind:L('Partido NBA','NBA game'),name:'Miami Heat vs Pelicans',
   d:L('En el Kaseya Center, casa del Miami Heat, frente a la bahía de Biscayne en el centro de Miami.','At the Kaseya Center, home of the Miami Heat, on Biscayne Bay in downtown Miami.'),p:'kaseya'},
- {img:'lasolas',when:L('Mar 6','Tue 6'),kind:L('Visita','Visit'),name:'Las Olas Boulevard',
+ {img:'lasolas',when:L('Lun 5','Mon 5'),kind:L('Visita','Visit'),name:'Las Olas Boulevard',
   d:L('La calle más conocida de Fort Lauderdale: tiendas, restaurantes y galerías bajo las palmeras.','Fort Lauderdale’s best-known street: shops, restaurants and galleries under the palm trees.'),p:'olas'},
- {img:'hardrock',when:L('Mar 6','Tue 6'),kind:L('Visita','Visit'),name:'Seminole Hard Rock',
+ {img:'hardrock',when:L('Lun 5','Mon 5'),kind:L('Visita','Visit'),name:'Seminole Hard Rock',
   d:L('El famoso hotel en forma de guitarra en Hollywood, Florida. Cenamos en el Hard Rock Cafe.','The famous guitar-shaped hotel in Hollywood, Florida. Dinner at the Hard Rock Cafe.'),p:'hr'},
  {img:'beach',when:L('Vie 9','Fri 9'),kind:L('Entrenamiento','Training'),name:'Fort Lauderdale Beach',
   d:L('Entrenamiento en las canchas de baloncesto de Central Beach, junto a la arena y el océano Atlántico.','Training on the Central Beach basketball courts, right by the sand and the Atlantic Ocean.'),p:'beach'},
