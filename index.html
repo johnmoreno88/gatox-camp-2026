@@ -51,7 +51,7 @@ h3{font-size:1.55rem;font-weight:800;text-transform:uppercase}
 p{margin:0}
 .eyebrow{font-family:var(--cond);font-weight:700;text-transform:uppercase;letter-spacing:.14em;font-size:.82rem;color:var(--gold-ink)}
 .lede{color:var(--muted);max-width:62ch;font-size:1.08rem}
-section{padding-block:72px}
+section{padding-block:72px;scroll-margin-top:56px}
 .sec-head{display:grid;gap:12px;margin-bottom:34px}
 
 /* ---- top bar ---- */
@@ -214,12 +214,62 @@ section{padding-block:72px}
 .card-c.emerg{border-color:#C8202F;background:rgba(200,32,47,.12)}
 .card-c.emerg .num{font:900 2.6rem/1 var(--display)}
 
+/* ---- survey ---- */
+.surv-wrap{max-width:680px}
+.surv-tabs{display:inline-flex;border:1px solid var(--line);border-radius:999px;padding:4px;background:var(--surface);gap:4px;margin-bottom:18px}
+.surv-tabs button{font:700 .9rem/1 var(--cond);letter-spacing:.08em;text-transform:uppercase;padding:10px 16px;border-radius:999px;border:0;background:none;color:var(--muted);cursor:pointer}
+.surv-tabs button[aria-selected="true"]{background:var(--navy);color:#fff}
+.surv{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden}
+.surv-top{display:flex;justify-content:space-between;gap:12px;align-items:center;padding:14px 20px;border-bottom:1px solid var(--line);font:600 .85rem var(--cond);letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.surv-bar{height:4px;background:var(--line)}
+.surv-bar span{display:block;height:100%;background:var(--red);transition:width .3s}
+.surv-body{padding:26px 22px 22px;display:grid;gap:18px}
+.surv-q{font:800 clamp(1.45rem,4vw,1.9rem)/1.1 var(--display);text-transform:uppercase;text-wrap:balance}
+.surv-hint{color:var(--muted);font-size:.92rem;margin-top:-10px}
+.scale{display:grid;grid-template-columns:repeat(5,1fr);gap:8px}
+.scale button{aspect-ratio:1;max-height:72px;width:100%;border:1px solid var(--line);border-radius:10px;background:var(--bg);color:var(--ink);font:800 1.5rem var(--display);cursor:pointer;transition:transform .12s,background .12s}
+.scale.emoji button{font-size:1.8rem}
+.scale button:hover{transform:translateY(-2px)}
+.scale button[aria-pressed="true"]{background:var(--navy);border-color:var(--navy);color:#fff}
+.scale-ends{display:flex;justify-content:space-between;font-size:.85rem;color:var(--muted);margin-top:-8px}
+.opts{display:flex;flex-wrap:wrap;gap:8px}
+.opts button{border:1px solid var(--line);background:var(--bg);color:var(--ink);border-radius:999px;padding:10px 14px;font:600 .98rem var(--body);cursor:pointer}
+.opts button[aria-pressed="true"]{background:var(--navy);border-color:var(--navy);color:#fff}
+.surv textarea{width:100%;min-height:110px;border:1px solid var(--line);border-radius:10px;background:var(--bg);color:var(--ink);font:400 1rem/1.5 var(--body);padding:12px 14px;resize:vertical}
+.surv-nav{display:flex;justify-content:space-between;align-items:center;gap:12px}
+.surv-nav .back{background:none;border:0;color:var(--muted);font:600 .9rem var(--cond);letter-spacing:.08em;text-transform:uppercase;cursor:pointer;padding:8px 0}
+.surv-nav .back[disabled]{visibility:hidden}
+.btn.navy{background:var(--navy);color:#fff}
+.btn[disabled]{opacity:.45;cursor:not-allowed;filter:none}
+.surv-done{padding:34px 22px;display:grid;gap:12px;justify-items:start}
+.surv-done .big{font:900 2.4rem/1 var(--display);text-transform:uppercase}
+.surv-err{color:var(--red);font-size:.95rem}
+.surv-note{color:var(--muted);font-size:.88rem;margin-top:12px}
 footer{padding-block:40px;color:var(--muted);font-size:.85rem}
 footer .wrap{display:grid;gap:14px}
 footer .flogo{display:flex;align-items:center;gap:14px}
 footer .flogo img{width:56px;height:auto;border-radius:8px;background:#f7f7f7}
 footer details summary{cursor:pointer;font-weight:600;color:var(--ink)}
 footer ul{margin:10px 0 0;padding-left:18px;display:grid;gap:3px}
+/* ---- recap ---- */
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:28px}
+.stat{border-top:3px solid var(--red);padding-top:10px;display:grid;gap:2px}
+.stat b{font:900 clamp(2.2rem,6vw,3.2rem)/1 var(--display);font-variant-numeric:tabular-nums}
+.stat span{font:700 .8rem var(--cond);letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+@media (max-width:420px){.stats{grid-template-columns:repeat(2,1fr)}}
+.recap{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:18px}
+.rday{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden}
+.rhead{display:flex;gap:14px;align-items:center}
+.rday figure{margin:0;aspect-ratio:16/9;overflow:hidden;background:var(--navy);position:relative}
+.rday figure img{width:100%;height:100%;object-fit:cover;display:block}
+.rday .date{flex:none;width:56px;background:var(--navy);color:#fff;border-radius:8px;padding:6px 10px;display:grid;justify-items:center;line-height:1}
+.rday .date b{font:900 1.6rem var(--display)}
+.rday .date small{font:700 .7rem var(--cond);letter-spacing:.12em;color:#D9B45A}
+.rday .body{padding:18px;display:grid;gap:12px;align-content:start}
+.rday .dow{font:700 .76rem var(--cond);letter-spacing:.12em;text-transform:uppercase;color:var(--gold-ink)}
+.rday h3{font-size:1.4rem;margin-top:2px}
+.rday ul{margin:0;padding-left:18px;color:var(--muted);display:grid;gap:3px}
+
 </style>
 
 <style>body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
@@ -227,14 +277,13 @@ footer ul{margin:10px 0 0;padding-left:18px;display:grid;gap:3px}
 <body>
 <div id="app" data-lang="es">
 
+
 <header class="bar">
   <div class="wrap">
     <a class="brand" href="#top">GATOX <b>USA</b></a>
     <nav class="nav" aria-label="Secciones">
-      <a href="#uniforme"><span class="es">Uniforme</span><span class="en">Uniform</span></a>
-      <a href="#maleta"><span class="es">Qué traer</span><span class="en">What to bring</span></a>
-      <a href="#agenda"><span class="es">Agenda</span><span class="en">Schedule</span></a>
-      <a href="#lugares"><span class="es">Lugares</span><span class="en">Places</span></a>
+      <a href="#encuesta"><span class="es">Encuesta</span><span class="en">Survey</span></a>
+      <a href="#resumen"><span class="es">Resumen</span><span class="en">Recap</span></a>
       <a href="#contacto"><span class="es">Contacto</span><span class="en">Contact</span></a>
     </nav>
     <div class="lang" role="group" aria-label="Idioma / Language">
@@ -247,22 +296,14 @@ footer ul{margin:10px 0 0;padding-left:18px;display:grid;gap:3px}
 <section class="hero" id="top">
   <div class="wrap">
     <div>
-      <p class="eyebrow" style="color:#D9B45A">
-        <span class="es">Colombia · Estados Unidos</span><span class="en">Colombia · United States</span>
-      </p>
-      <h1 style="margin-top:14px">GATOX <span class="gold">USA Camp 2026</span></h1>
+      <p class="eyebrow" style="color:#D9B45A"><span class="es">4 – 9 oct 2026 · Deerfield Beach, FL</span><span class="en">Oct 4 – 9, 2026 · Deerfield Beach, FL</span></p>
+      <h1 style="margin-top:14px"><span class="es">¡Gracias!</span><span class="en">Thank you!</span><span class="gold">GATOX USA Camp 2026</span></h1>
       <p class="sub">
-        <span class="es">Seis días de baloncesto en el sur de la Florida, en alianza con la Ciudad de Deerfield Beach. Clínicas, universidades, playa y un partido del Miami Heat.</span>
-        <span class="en">Six days of basketball in South Florida, in partnership with the City of Deerfield Beach. Clinics, college visits, the beach and a Miami Heat game.</span>
+        <span class="es">Gracias a los jugadores, las familias, los coaches y la Ciudad de Deerfield Beach por seis días inolvidables de baloncesto en Florida. Ayúdanos a hacer aún mejor el próximo camp: la encuesta toma un minuto y es anónima.</span><span class="en">Thank you to the players, families, coaches and the City of Deerfield Beach for six unforgettable days of basketball in Florida. Help us make next year’s camp even better: the survey takes one minute and is anonymous.</span>
       </p>
-      <div class="dates">
-        <span class="solid"><span class="es">4 – 9 oct 2026</span><span class="en">Oct 4 – 9, 2026</span></span>
-        <span>Deerfield Beach, FL</span>
-        <span><span class="es">Llegada + Inauguración: dom 4</span><span class="en">Arrival + Opening: Sun 4</span></span>
-      </div>
       <div class="hero-cta">
-        <a class="btn gold" href="#maleta"><span class="es">Lista de equipaje</span><span class="en">Packing list</span></a>
-        <a class="btn ghost" href="#agenda"><span class="es">Ver agenda</span><span class="en">See schedule</span></a>
+        <a class="btn gold" href="#padres"><span class="es">Encuesta para padres</span><span class="en">Parent survey</span></a>
+        <a class="btn ghost" href="#jugadores"><span class="es">Encuesta para jugadores</span><span class="en">Player survey</span></a>
       </div>
     </div>
     <div class="patch"><img src="patch.jpg" alt="GATOX USA Camp 2026 patch"></div>
@@ -271,127 +312,55 @@ footer ul{margin:10px 0 0;padding-left:18px;display:grid;gap:3px}
 
 <div class="partners">
   <div class="wrap">
-    <span class="lbl"><span class="es">En alianza con</span><span class="en">In partnership with</span></span>
+    <span class="lbl"><span class="es">Gracias a</span><span class="en">Thanks to</span></span>
     <div class="partner"><img src="logo.jpg" alt=""><span>GATOX Basketball Club<small>Colombia</small></span></div>
     <div class="partner"><span class="mark">DB</span><span><span class="es">Ciudad de Deerfield Beach</span><span class="en">City of Deerfield Beach</span><small>Florida</small></span></div>
   </div>
 </div>
 
-<section id="info">
+<section id="encuesta" >
   <div class="wrap">
-    <div class="facts">
-      <div class="fact">
-        <span class="k"><span class="es">Hotel</span><span class="en">Hotel</span></span>
-        <span class="v">Wyndham Deerfield Beach Resort</span>
-        <p>2096 NE 2nd Street, Deerfield Beach, FL 33441</p>
-        <div class="times">
-          <div><span class="k">Check-in</span><b>4:00 PM</b></div>
-          <div><span class="k">Check-out</span><b>11:00 AM</b></div>
-        </div>
-        <p><span class="es">Se puede solicitar entrada anticipada o salida tardía, pero no están garantizadas.</span><span class="en">Early check-in or late check-out can be requested, but is not guaranteed.</span></p>
+    <div class="sec-head">
+      <p class="eyebrow"><span class="es">Encuesta</span><span class="en">Survey</span></p>
+      <h2><span class="es">Cuéntanos cómo te fue</span><span class="en">Tell us how it went</span></h2>
+      <p class="lede"><span class="es">Cinco preguntas, un minuto. Es anónima: no pedimos nombre, correo ni teléfono.</span><span class="en">Five questions, one minute. It's anonymous: we don't ask for your name, email or phone.</span></p>
+    </div>
+    <div class="surv-wrap">
+      <div class="surv-tabs" role="tablist" aria-label="Encuesta">
+        <button type="button" role="tab" id="sv-tab-parents" data-s="parents" aria-selected="true"><span class="es">Padres</span><span class="en">Parents</span></button>
+        <button type="button" role="tab" id="sv-tab-students" data-s="students" aria-selected="false"><span class="es">Jugadores</span><span class="en">Players</span></button>
       </div>
-      <div class="fact">
-        <span class="k"><span class="es">Inauguración</span><span class="en">Opening</span></span>
-        <span class="v"><span class="es">Dom 4 oct · 5:00 PM</span><span class="en">Sun Oct 4 · 5:00 PM</span></span>
-        <p><span class="es">Reunión de apertura con padres y jugadores en el hotel. Aquí se entregan el uniforme oficial y el de salida.</span><span class="en">Opening meeting with parents and players at the hotel. The official and outing uniforms are handed out here.</span></p>
-      </div>
-      <div class="fact">
-        <span class="k"><span class="es">Clima en octubre</span><span class="en">October weather</span></span>
-        <span class="v"><span class="es">Caluroso y húmedo</span><span class="en">Hot and humid</span></span>
-        <p><span class="es">Alrededor de 30 °C de día, con aguaceros cortos en la tarde. Hidratación todo el tiempo.</span><span class="en">Around 86 °F (30 °C) by day, with short afternoon showers. Stay hydrated all day.</span></p>
-      </div>
-      <div class="fact">
-        <span class="k"><span class="es">Último día</span><span class="en">Final day</span></span>
-        <span class="v"><span class="es">Vie 9 oct</span><span class="en">Fri Oct 9</span></span>
-        <p><span class="es">Entrenamiento en la playa y clínica final en Deerfield Beach (2:00 – 4:00 PM).</span><span class="en">Beach training and the final clinic in Deerfield Beach (2:00 – 4:00 PM).</span></p>
-      </div>
+      <div class="surv" id="surv" role="tabpanel" aria-live="polite"></div>
+      <p class="surv-note"><span class="es">¿Más de un hijo en el camp? Puedes enviar una respuesta por cada uno.</span><span class="en">More than one child at camp? You can send one response for each.</span></p>
     </div>
   </div>
 </section>
 
-<section id="uniforme" style="padding-top:24px">
+<section id="resumen">
   <div class="wrap">
     <div class="sec-head">
-      <p class="eyebrow"><span class="es">Uniforme</span><span class="en">Uniform</span></p>
-      <h2><span class="es">Qué ponerse y cuándo</span><span class="en">What to wear, and when</span></h2>
-      <p class="lede"><span class="es">Cada jugador usa dos uniformes, y el camp entrega los dos. En la agenda cada actividad dice cuál usar.</span><span class="en">Each player uses two uniforms, and the camp provides both. Every activity in the schedule shows which one to wear.</span></p>
+      <p class="eyebrow"><span class="es">Resumen</span><span class="en">Recap</span></p>
+      <h2><span class="es">Lo que vivimos</span><span class="en">What we did</span></h2>
+      <p class="lede"><span class="es">Seis días en el sur de la Florida, de Miami a Boca Raton.</span><span class="en">Six days in South Florida, from Miami to Boca Raton.</span></p>
     </div>
-    <div class="uniform">
-      <div style="display:grid;gap:10px"><div class="kit-photo">
-        <img src="uniform.jpg" alt="Official GATOX USA Camp 2026 uniform, front and back" onerror="this.remove();document.getElementById('kitfb').hidden=false">
-        <div class="kit-fallback" id="kitfb" hidden>
-          <img src="logo.jpg" alt="">
-          <p><span class="es">Uniforme oficial GATOX · azul marino</span><span class="en">Official GATOX uniform · navy</span></p>
-        </div>
-      </div><p class="eyebrow" style="color:var(--muted)"><span class="es">Uniforme oficial · clínicas en Deerfield Beach</span><span class="en">Official uniform · Deerfield Beach clinics</span></p></div>
-      <div class="rules">
-        <div class="handoff">
-          <div class="d">4<small>OCT</small></div>
-          <p><span class="es"><b>Entrega del uniforme oficial y el de salida</b> en la reunión de apertura, Wyndham Deerfield Beach Resort, 5:00 PM. Revisa las tallas ese mismo día.</span><span class="en"><b>Official and outing uniform handout</b> at the opening meeting, Wyndham Deerfield Beach Resort, 5:00 PM. Check your sizes that same day.</span></p>
-        </div>
-        <div class="rule game">
-          <div class="when"><span class="chip c-game"><span class="es">Uniforme oficial</span><span class="en">Official uniform</span></span><h3 style="font-size:1.25rem"><span class="es">Clínicas en Deerfield Beach</span><span class="en">Deerfield Beach clinics</span></h3></div>
-          <p><span class="es">El uniforme azul marino de la foto. Se usa en todas las clínicas del Johnny L. Tinger Community Center, con la Ciudad de Deerfield Beach (mar, jue y vie).</span><span class="en">The navy uniform in the photo. Worn at every clinic at the Johnny L. Tinger Community Center with the City of Deerfield Beach (Tue, Thu and Fri).</span></p>
-        </div>
-        <div class="rule kit">
-          <div class="when"><span class="chip c-kit"><span class="es">Uniforme de salida</span><span class="en">Outing uniform</span></span><h3 style="font-size:1.25rem"><span class="es">Visitas y eventos</span><span class="en">Visits and events</span></h3></div>
-          <p><span class="es">En todas las salidas vamos todos iguales, representando al club y a Colombia. Con tenis casuales:</span><span class="en">On every outing everyone matches, representing the club and Colombia. Wear it with regular sneakers:</span></p>
-          <ul>
-            <li>Zoo Miami · Sawgrass Mills · Lynn University</li>
-            <li>Las Olas Blvd · Seminole Hard Rock</li>
-            <li>FAU Paradise Madness · Miami Heat vs Pelicans</li>
-          </ul>
-        </div>
-        <div class="rule">
-          <div class="when"><span class="chip c-beach"><span class="es">Ropa de playa</span><span class="en">Beach gear</span></span><h3 style="font-size:1.25rem"><span class="es">Entrenamiento en la playa</span><span class="en">Beach training</span></h3></div>
-          <p><span class="es">Viernes 9 en Fort Lauderdale Beach: vestido de baño, pantaloneta, sandalias y bloqueador.</span><span class="en">Friday the 9th at Fort Lauderdale Beach: swimsuit, shorts, sandals and sunscreen.</span></p>
-        </div>
-      </div>
+    <div class="stats">
+      <div class="stat"><b>6</b><span><span class="es">días</span><span class="en">days</span></span></div>
+      <div class="stat"><b>18</b><span><span class="es">jugadores</span><span class="en">players</span></span></div>
+      <div class="stat"><b>4</b><span><span class="es">clínicas</span><span class="en">clinics</span></span></div>
+      <div class="stat"><b>1</b><span><span class="es">práctica en la playa</span><span class="en">beach practice</span></span></div>
+      <div class="stat"><b>1</b><span><span class="es">partido NBA</span><span class="en">NBA game</span></span></div>
+      <div class="stat"><b>1</b><span><span class="es">partido universitario</span><span class="en">college game</span></span></div>
+      <div class="stat"><b>1</b><span><span class="es">tour universitario</span><span class="en">college tour</span></span></div>
+      <div class="stat"><b>4</b><span><span class="es">eventos sociales y culturales</span><span class="en">social & cultural events</span></span></div>
     </div>
-  </div>
-</section>
-
-<section id="maleta" style="background:var(--surface);border-block:1px solid var(--line)">
-  <div class="wrap">
-    <div class="sec-head">
-      <p class="eyebrow"><span class="es">Qué traer</span><span class="en">What to bring</span></p>
-      <h2><span class="es">Lista de equipaje</span><span class="en">Packing list</span></h2>
-      <p class="lede"><span class="es">Marca cada cosa mientras empacas. La lista se guarda en este teléfono o computador.</span><span class="en">Tick each item as you pack. Your list is saved on this phone or computer.</span></p>
+    <div class="recap">
+      <article class="rday"><div class="body"><div class="rhead"><span class="date"><b>4</b><small>OCT</small></span><div><span class="dow"><span class="es">Domingo</span><span class="en">Sunday</span></span><h3><span class="es">Llegada e inauguración</span><span class="en">Arrival and opening</span></h3></div></div><ul><li><span class="es">Llegada al Wyndham Deerfield Beach Resort</span><span class="en">Arrival at the Wyndham Deerfield Beach Resort</span></li><li><span class="es">Reunión de apertura con padres y jugadores</span><span class="en">Opening meeting with parents and players</span></li><li><span class="es">Entrega de uniformes</span><span class="en">Uniform handout</span></li></ul></div></article>
+      <article class="rday"><div class="body"><div class="rhead"><span class="date"><b>5</b><small>OCT</small></span><div><span class="dow"><span class="es">Lunes</span><span class="en">Monday</span></span><h3><span class="es">Compras y Fort Lauderdale</span><span class="en">Shopping and Fort Lauderdale</span></h3></div></div><ul><li><span class="es">Sawgrass Mills</span><span class="en">Sawgrass Mills</span></li><li><span class="es">Paseo por Las Olas Boulevard</span><span class="en">Walk along Las Olas Boulevard</span></li><li><span class="es">Cena en Seminole Hard Rock</span><span class="en">Dinner at Seminole Hard Rock</span></li></ul></div></article>
+      <article class="rday"><div class="body"><div class="rhead"><span class="date"><b>6</b><small>OCT</small></span><div><span class="dow"><span class="es">Martes</span><span class="en">Tuesday</span></span><h3><span class="es">Zoo Miami y clínica</span><span class="en">Zoo Miami and clinic</span></h3></div></div><ul><li><span class="es">Visita y almuerzo en Zoo Miami</span><span class="en">Zoo Miami visit and lunch</span></li><li><span class="es">Clínica en el Johnny L. Tinger Community Center</span><span class="en">Clinic at the Johnny L. Tinger Community Center</span></li></ul></div></article>
+      <article class="rday"><div class="body"><div class="rhead"><span class="date"><b>7</b><small>OCT</small></span><div><span class="dow"><span class="es">Miércoles</span><span class="en">Wednesday</span></span><h3><span class="es">Día universitario</span><span class="en">College day</span></h3></div></div><ul><li><span class="es">Lynn University: tour del campus, sesión informativa y práctica del equipo</span><span class="en">Lynn University: campus tour, info session and team practice watch</span></li><li><span class="es">FAU Paradise Madness en el Baldwin Arena</span><span class="en">FAU Paradise Madness at Baldwin Arena</span></li></ul></div></article>
+      <article class="rday"><div class="body"><div class="rhead"><span class="date"><b>8</b><small>OCT</small></span><div><span class="dow"><span class="es">Jueves</span><span class="en">Thursday</span></span><h3><span class="es">Día NBA</span><span class="en">NBA day</span></h3></div></div><ul><li><span class="es">Clínica en Deerfield Beach</span><span class="en">Clinic in Deerfield Beach</span></li><li><span class="es">Práctica del Miami Heat en el Kaseya Center</span><span class="en">Miami Heat practice at Kaseya Center</span></li><li><span class="es">Partido: Miami Heat vs New Orleans Pelicans</span><span class="en">Game: Miami Heat vs New Orleans Pelicans</span></li></ul></div></article>
+      <article class="rday"><div class="body"><div class="rhead"><span class="date"><b>9</b><small>OCT</small></span><div><span class="dow"><span class="es">Viernes</span><span class="en">Friday</span></span><h3><span class="es">Playa y cierre</span><span class="en">Beach and closing</span></h3></div></div><ul><li><span class="es">Entrenamiento en Fort Lauderdale Beach</span><span class="en">Training at Fort Lauderdale Beach</span></li><li><span class="es">Clínica final en Deerfield Beach</span><span class="en">Final clinic in Deerfield Beach</span></li></ul></div></article>
     </div>
-    <div class="pack-top">
-      <div class="meter"><span class="es">Empacado</span><span class="en">Packed</span><span class="track"><span class="fill" id="packfill"></span></span><output id="packcount">0/0</output></div>
-      <button class="linkbtn" type="button" id="packreset"><span class="es">Desmarcar todo</span><span class="en">Clear all</span></button>
-    </div>
-    <div class="packgrid" id="packgrid"></div>
-  </div>
-</section>
-
-<section id="agenda">
-  <div class="wrap">
-    <div class="sec-head">
-      <p class="eyebrow"><span class="es">Agenda · versión 27 sep</span><span class="en">Schedule · Sept 27 version</span></p>
-      <h2><span class="es">Día a día</span><span class="en">Day by day</span></h2>
-      <p class="lede"><span class="es">El desayuno es a las 8:00 AM todos los días. Toca un día para ver horarios, direcciones y qué ropa usar.</span><span class="en">Breakfast is at 8:00 AM every day. Tap a day to see times, addresses and what to wear.</span></p>
-    </div>
-    <div class="days" role="tablist" id="daytabs" aria-label="Días"></div>
-    <div class="panel" id="daypanel" role="tabpanel"></div>
-    <div class="legend">
-      <span class="chip c-game"><span class="es">Uniforme oficial</span><span class="en">Official uniform</span></span>
-      <span class="chip c-kit"><span class="es">Uniforme de salida</span><span class="en">Outing uniform</span></span>
-      <span class="chip c-beach"><span class="es">Ropa de playa</span><span class="en">Beach gear</span></span>
-      <span class="chip c-free"><span class="es">Libre</span><span class="en">Free</span></span>
-    </div>
-  </div>
-</section>
-
-<section id="lugares" style="padding-top:24px">
-  <div class="wrap">
-    <div class="sec-head">
-      <p class="eyebrow"><span class="es">Lugares</span><span class="en">Places</span></p>
-      <h2><span class="es">A dónde vamos</span><span class="en">Where we're going</span></h2>
-      <p class="lede"><span class="es">De Miami a Boca Raton: canchas, universidades, el zoológico, la playa y el estadio del Heat.</span><span class="en">From Miami to Boca Raton: courts, universities, the zoo, the beach and the Heat's arena.</span></p>
-    </div>
-    <div class="places" id="places"></div>
   </div>
 </section>
 
@@ -433,14 +402,11 @@ footer ul{margin:10px 0 0;padding-left:18px;display:grid;gap:3px}
 <footer>
   <div class="wrap">
     <div class="flogo"><img src="logo.jpg" alt="GATOX Basketball Club"><span>GATOX Basketball Club · USA Camp 2026 · Deerfield Beach, Florida</span></div>
-    <p><span class="es">La agenda puede cambiar. Esta página se actualiza con la última versión.</span><span class="en">The schedule may change. This page is updated with the latest version.</span></p>
-    <details>
-      <summary><span class="es">Créditos de fotos</span><span class="en">Photo credits</span></summary>
-      <ul id="credits"></ul>
-    </details>
+    <p><span class="es">¡Nos vemos en el próximo camp!</span><span class="en">See you at the next camp!</span></p>
   </div>
 </footer>
 </div>
+
 
 <script>
 (function(){
@@ -455,169 +421,83 @@ function setLang(l){app.dataset.lang=l;document.documentElement.lang=l;
 document.querySelectorAll('.lang button').forEach(b=>b.addEventListener('click',()=>setLang(b.dataset.set)));
 setLang(store.get('gatox-lang')==='en'?'en':'es');
 
-/* packing */
-const PACK=[
- {id:'court',cls:'court',t:L('Cancha','Court'),s:L('Obligatorio','Required'),items:[
-  ['shoes',L('Tenis de baloncesto para práctica','Basketball practice shoes'),L('Ya usados, no nuevos: evita ampollas.','Broken in, not brand new, to avoid blisters.')],
-  ['socks',L('Medias deportivas','Athletic socks'),L('Un par por día, mínimo 6.','One pair per day, at least 6.')],
-  ['shorts',L('Pantalonetas de práctica','Practice shorts'),L('2 o 3 extra para rotar.','2 or 3 extra to rotate.')],
-  ['tees',L('Camisetas de práctica','Practice t-shirts'),L('Tela que seque rápido. 3 o más.','Quick-dry fabric. 3 or more.')],
- ],foot:L('<b>No hace falta:</b> el uniforme oficial ni el de salida. Se entregan el 4 de octubre.','<b>Not needed:</b> the official or outing uniform. Both are handed out on Oct 4.')},
- {id:'out',t:L('Salidas','Outings'),s:L('Con el uniforme de salida','With the outing uniform'),items:[
-  ['sneakers',L('Tenis casuales','Regular sneakers'),L('Para las visitas. Así los tenis de baloncesto se quedan limpios para la cancha.','For visits, so basketball shoes stay clean for the court.')],
-  ['sweater',L('Saco o buzo','Sweater or hoodie'),L('El aire acondicionado es fuerte en el bus, el Kaseya Center, el centro comercial y el hotel.','The air conditioning is strong on the bus, at Kaseya Center, the mall and the hotel.')],
-  ['pants',L('Un pantalón largo (jean o sudadera)','One pair of long pants (jeans or joggers)'),L('Para el vuelo y las noches con aire acondicionado fuerte.','For the flight and evenings with strong air conditioning.')],
- ]},
- {id:'beach',t:L('Playa','Beach'),s:L('Vie 9','Fri 9'),items:[
-  ['swim',L('Vestido de baño','Swimsuit')],
-  ['towel',L('Toalla de playa','Beach towel')],
-  ['sun',L('Bloqueador solar resistente al agua','Water-resistant sunscreen')],
-  ['sandals',L('Sandalias','Sandals')],
-  ['cap',L('Gorra y gafas de sol','Cap and sunglasses')],
- ]},
- {id:'docs',t:L('Documentos','Documents'),s:L('En el morral de mano','In your carry-on'),items:[
-  ['passport',L('Pasaporte vigente','Valid passport')],
-  ['visa',L('Visa de EE. UU. vigente','Valid US visa')],
-  ['ins',L('Tarjeta del seguro médico de viaje','Travel medical insurance card')],
-  ['auth',L('Copia del permiso de salida del menor','Copy of the parental travel authorization'),L('Firmado por padres o acudientes.','Signed by parents or guardians.')],
- ]},
- {id:'health',t:L('Salud y personal','Health & personal'),items:[
-  ['bottle',L('Botella de agua reutilizable','Reusable water bottle')],
-  ['meds',L('Medicamentos personales','Personal medications'),L('Con la fórmula médica, en su empaque original.','With the prescription, in original packaging.')],
-  ['toil',L('Artículos de aseo','Toiletries')],
-  ['rain',L('Chaqueta liviana impermeable','Light rain jacket')],
-  ['charger',L('Cargador del celular','Phone charger'),L('Colombia y EE. UU. usan el mismo enchufe: no necesitas adaptador.','Colombia and the US use the same plug: no adapter needed.')],
- ]},
- {id:'money',t:L('Dinero','Spending money'),items:[
-  ['usd',L('Dinero en dólares para gastos','US dollars for spending'),L('Para Sawgrass Mills, Las Olas y recuerdos. El monto lo decide cada familia.','For Sawgrass Mills, Las Olas and souvenirs. Each family decides the amount.')],
-  ['card',L('Tarjeta débito o crédito habilitada para el exterior','Debit or credit card enabled for international use')],
- ]},
-];
-const grid=document.getElementById('packgrid');
-let saved={};try{saved=JSON.parse(store.get('gatox-pack')||'{}')}catch(e){}
-grid.innerHTML=PACK.map(g=>`<div class="pack ${g.cls||''}"><h3>${g.t}${g.s?`<small>${g.s}</small>`:''}</h3><ul>${
-  g.items.map(([k,t,n])=>`<li><label><input type="checkbox" id="pk-${g.id}-${k}" data-k="${g.id}-${k}"${saved[g.id+'-'+k]?' checked':''}><span>${t}${n?`<span class="note">${n}</span>`:''}</span></label></li>`).join('')
-}</ul>${g.foot?`<p class="notneeded">${g.foot}</p>`:''}</div>`).join('');
-const boxes=[...grid.querySelectorAll('input')];
-function meter(){const n=boxes.filter(b=>b.checked).length;document.getElementById('packcount').textContent=n+'/'+boxes.length;document.getElementById('packfill').style.width=(100*n/boxes.length)+'%'}
-grid.addEventListener('change',e=>{if(!e.target.dataset.k)return;saved[e.target.dataset.k]=e.target.checked;store.set('gatox-pack',JSON.stringify(saved));meter()});
-document.getElementById('packreset').addEventListener('click',()=>{boxes.forEach(b=>b.checked=false);saved={};store.set('gatox-pack','{}');meter()});
-meter();
 
-/* schedule */
-const P={
- hotel:['Wyndham Deerfield Beach Resort','2096 NE 2nd Street, Deerfield Beach, FL 33441'],
- legacy:['Legacy Basketball Academy','600 SW 14 Ave, Homestead, FL 33030'],
- tinger:['Johnny L. Tinger Community Center','445 SW 2nd Street, Deerfield Beach, FL'],
- zoo:['Zoo Miami','12400 SW 152 St, Miami, FL'],
- saw:['Sawgrass Mills','12801 W Sunrise Blvd, Sunrise, FL'],
- lynn:['Lynn University','3601 N Military Trl, Boca Raton, FL'],
- olas:['Las Olas Blvd','Las Olas Blvd, Fort Lauderdale, FL'],
- hr:['Seminole Hard Rock Cafe','1 Seminole Way, Hollywood, FL'],
- fau:['Eleanor R. Baldwin Arena (FAU)','777 Glades Rd, Boca Raton, FL'],
- kaseya:['Kaseya Center','601 Biscayne Blvd, Miami, FL'],
- beach:['Central Beach Basketball Courts','Fort Lauderdale Beach, FL'],
+/* survey */
+// Paste the Google Apps Script web app URL here (ends in /exec)
+const SURVEY_ENDPOINT='https://script.google.com/macros/s/AKfycbwkk4V1AU6pyCJxdC_s5ZmwgVQUyD9lJB9O7nnhame0oOXNdllRsV-rS9AHJmIQumZb/exec';
+(function(){
+const ACTS=[['clinics',L('Clínicas en Deerfield Beach','Deerfield Beach clinics'),'Deerfield clinics'],['nba',L('Práctica del Heat y partido NBA','Heat practice + NBA game'),'Heat practice + NBA game'],['fau',L('FAU Paradise Madness'),'FAU Paradise Madness'],['lynn',L('Lynn University'),'Lynn University'],['zoo',L('Zoo Miami'),'Zoo Miami'],['beach',L('Entrenamiento en la playa','Beach training'),'Beach training'],['sawgrass',L('Sawgrass Mills'),'Sawgrass Mills'],['olas',L('Las Olas y Hard Rock','Las Olas + Hard Rock'),'Las Olas + Hard Rock'],['hotel',L('El hotel','The hotel'),'Hotel']];
+const YNM=[['yes',L('Sí','Yes'),'Yes'],['maybe',L('Tal vez','Maybe'),'Maybe'],['no',L('No'),'No']];
+const S={
+ parents:{qs:[
+  {id:'overall',type:'scale',q:L('¿Cómo calificas el camp en general?','How would you rate the camp overall?'),lo:L('Malo','Poor'),hi:L('Excelente','Excellent')},
+  {id:'communication',type:'scale',q:L('¿Qué tan clara fue la comunicación y la organización?','How clear were communication and organization?'),lo:L('Confusa','Unclear'),hi:L('Muy clara','Very clear')},
+  {id:'best',type:'multi',q:L('¿Qué disfrutó más tu hijo o hija?','What did your child enjoy most?'),hint:L('Elige todas las que quieras.','Pick as many as you like.'),opts:ACTS},
+  {id:'again',type:'choice',q:L('¿Lo inscribirías de nuevo el próximo año?','Would you sign them up again next year?'),opts:YNM},
+  {id:'comment',type:'text',q:a=>a.overall&&a.overall<=3?L('¿Qué salió mal y cómo lo mejoramos?','What went wrong, and how can we fix it?'):L('¿Algo que podamos mejorar?','Anything we could do better?'),hint:L('Opcional. No escribas nombres.','Optional. Please don’t include names.')},
+ ]},
+ students:{qs:[
+  {id:'fun',type:'scale',emoji:true,q:L('¿Qué tanto te divertiste?','How much fun did you have?'),lo:L('Nada','Not at all'),hi:L('¡Muchísimo!','So much!')},
+  {id:'improved',type:'scale',q:L('¿Cuánto mejoró tu baloncesto?','How much did your basketball improve?'),lo:L('Poco','A little'),hi:L('Mucho','A lot')},
+  {id:'best',type:'choice',q:L('¿Cuál fue tu momento favorito?','What was your favorite moment?'),opts:ACTS},
+  {id:'again',type:'choice',q:L('¿Volverías al GATOX USA Camp?','Would you come back to GATOX USA Camp?'),opts:YNM},
+  {id:'comment',type:'text',q:a=>a.fun&&a.fun<=3?L('¿Qué te hubiera gustado diferente?','What would you have liked to be different?'):L('Déjale un mensaje a los coaches','Leave a message for the coaches'),hint:L('Opcional. No escribas nombres.','Optional. Please don’t include names.')},
+ ]},
 };
-const K='kit',PR='prac',G='game',B='beach',F='free';
-const BF=['8:00 AM',L('Desayuno','Breakfast'),null,null,'quiet'];
-const TR=t=>[t,L('Regreso al hotel','Travel back to hotel'),null,null,'quiet'];
-const TRS=L('Traslado / descanso','Travel / Rest');
-const DAYS=[
- {n:4,dow:L('Domingo','Sunday'),tag:L('Llegada + Inauguración','Arrival + Opening'),rows:[
-  [L('Desde 4:00 PM','From 4:00 PM'),L('Llegada y check-in en el hotel · la entrada anticipada se puede pedir, pero no está garantizada','Arrival and hotel check-in · early check-in can be requested but is not guaranteed'),'hotel',null,'quiet'],
-  ['5:00 – 7:00 PM',L('Reunión de apertura con padres y jugadores · entrega del uniforme oficial','Opening meeting with parents and players · official uniform handout'),'hotel',null,'hl'],
- ]},
- {n:5,dow:L('Lunes','Monday'),tag:L('Sawgrass + Las Olas','Sawgrass + Las Olas'),rows:[
-  BF,
-  ['10:00 AM – 1:00 PM',L('Mañana libre en el hotel','Free morning at the hotel'),null,F],
-  ['1:00 PM',L('Almuerzo','Lunch')],
-  ['2:00 – 3:00 PM',L('Traslado a Sawgrass Mills','Travel to Sawgrass Mills'),null,null,'quiet'],
-  ['3:00 – 5:00 PM',L('Visita a Sawgrass Mills','Visit Sawgrass Mills'),'saw',K],
-  ['5:00 – 6:00 PM',TRS,null,null,'quiet'],
-  ['6:00 PM',L('Regreso','Return travel'),null,null,'quiet'],
-  ['7:00 – 8:00 PM',L('Visita a Las Olas Blvd','Visit Las Olas Blvd'),'olas',K],
-  ['8:00 – 9:00 PM',TRS,null,null,'quiet'],
-  ['9:00 PM',L('Seminole Hard Rock Cafe','Seminole Hard Rock Cafe'),'hr',K],
- ]},
- {n:6,dow:L('Martes','Tuesday'),tag:L('Zoo + clínica','Zoo + clinic'),rows:[
-  BF,
-  ['10:00 AM – 1:00 PM',L('Visita + almuerzo en Zoo Miami','Zoo Miami visit + lunch'),'zoo',K],
-  ['1:00 – 2:00 PM',TRS,null,null,'quiet'],
-  TR('2:00 PM'),
-  ['3:00 – 4:00 PM',L('Tiempo libre','Free time'),null,F],
-  ['4:00 – 7:00 PM',TRS,null,null,'quiet'],
-  ['7:00 – 9:00 PM',L('Clínica deportiva','Sports clinic'),'tinger',G],
- ]},
- {n:7,dow:L('Miércoles','Wednesday'),tag:L('Lynn + FAU','Lynn + FAU'),rows:[
-  BF,
-  ['10:00 AM – 1:00 PM',L('Tour y almuerzo en Lynn University','Lynn University tour + lunch'),'lynn',K],
-  ['1:00 – 2:00 PM',TRS,null,null,'quiet'],
-  TR('2:00 PM'),
-  ['3:00 – 4:00 PM',L('Tiempo libre','Free time'),null,F],
-  ['4:00 – 7:00 PM',TRS,null,null,'quiet'],
-  ['7:00 – 9:00 PM',L('FAU Paradise Madness','FAU Paradise Madness'),'fau',K,'hl'],
- ]},
- {n:8,dow:L('Jueves','Thursday'),tag:L('Clínica + NBA','Clinic + NBA'),rows:[
-  BF,
-  ['10:00 AM – 12:00 PM',L('Mañana libre en el hotel','Free morning at the hotel'),null,F],
-  ['12:00 PM',L('Almuerzo','Lunch')],
-  ['1:00 – 2:30 PM',L('Clínica deportiva','Sports clinic'),'tinger',G],
-  TR('2:30 PM'),
-  ['3:00 – 3:30 PM',L('Tiempo libre','Free time'),null,F],
-  ['3:30 PM',L('Salida hacia Miami para el partido NBA','Depart for Miami for the NBA game'),'kaseya',K],
-  ['5:30 – 6:30 PM',L('Ver la práctica del Miami Heat','Watch the Miami Heat practice'),'kaseya',K],
-  ['6:30 PM',L('Apertura de puertas y ubicación en el estadio','Doors open, find our seats'),null,null,'quiet'],
-  ['7:30 PM',L('Partido NBA: Miami Heat vs New Orleans Pelicans','NBA game: Miami Heat vs New Orleans Pelicans'),'kaseya',K,'hl'],
-  [L('Al terminar (~10:00 PM)','After the game (~10:00 PM)'),L('Regreso al hotel','Travel back to hotel'),null,null,'quiet'],
- ]},
- {n:9,dow:L('Viernes','Friday'),tag:L('Playa + clínica final','Beach + final clinic'),rows:[
-  BF,
-  ['10:00 AM – 12:00 PM',L('Entrenamiento en la playa','Beach training'),'beach',B],
-  ['12:00 – 1:00 PM',TRS,null,null,'quiet'],
-  ['1:00 PM',L('Almuerzo','Lunch')],
-  ['2:00 – 4:00 PM',L('Clínica deportiva final','Final sports clinic'),'tinger',G,'hl'],
- ]},
-];
-const CHIP={game:['c-game',L('Uniforme oficial','Official uniform')],kit:['c-kit',L('Uniforme de salida','Outing uniform')],prac:['c-prac',L('Uniforme de práctica','Practice uniform')],beach:['c-beach',L('Ropa de playa','Beach gear')],free:['c-free',L('Libre','Free')]};
-const tabs=document.getElementById('daytabs'),panel=document.getElementById('daypanel');
-tabs.innerHTML=DAYS.map((d,i)=>`<button class="day-tab" role="tab" id="tab-${d.n}" data-i="${i}" aria-selected="false"><span class="dow">${d.dow}</span><span class="num">${d.n} <span style="font-size:.9rem;font-weight:800">OCT</span></span><span class="tag">${d.tag}</span></button>`).join('');
-function show(i){const d=DAYS[i];
-  tabs.querySelectorAll('.day-tab').forEach((b,j)=>b.setAttribute('aria-selected',j===i));
-  panel.setAttribute('aria-labelledby','tab-'+d.n);
-  panel.innerHTML=`<div class="panel-head"><h3>${d.dow} ${d.n} ${L('de octubre','October')}</h3><p>${d.tag}</p></div>`+
-   d.rows.map(([t,w,p,c,cls])=>`<div class="row ${cls||''}"><span class="t">${t}</span><div><div class="what">${w}</div>${p?`<div class="where">${P[p][0]} · <a href="${map(P[p][0]+', '+P[p][1])}" target="_blank" rel="noopener">${P[p][1]}</a></div>`:''}</div>${c?`<span class="chip ${CHIP[c][0]}">${CHIP[c][1]}</span>`:'<span></span>'}</div>`).join('');
-  store.set('gatox-day',String(i));
+const FACES=['😞','🙁','😐','🙂','🤩'];
+const box=document.getElementById('surv'), tabs=document.querySelectorAll('.surv-tabs button');
+let st={s:'parents',i:0,a:{},done:false,err:'',sending:false};
+const esc=t=>String(t).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+function pick(s){st={s,i:0,a:{},done:false,err:'',sending:false};tabs.forEach(b=>b.setAttribute('aria-selected',b.dataset.s===s));box.setAttribute('aria-labelledby','sv-tab-'+s);render()}
+function answered(q){const v=st.a[q.id];return q.type==='text'||(q.type==='multi'?(v&&v.length):v!=null)}
+function render(){
+  const qs=S[st.s].qs;
+  if(st.done){box.innerHTML=`<div class="surv-done"><span class="big">${L('¡Gracias!','Thank you!')}</span><p>${L('Tu respuesta fue enviada. Nos ayuda a mejorar el próximo camp.','Your response was sent. It helps us make next year’s camp better.')}</p><button class="btn navy" type="button" data-act="again">${L('Enviar otra respuesta','Send another response')}</button></div>`;return}
+  const q=qs[st.i], last=st.i===qs.length-1, qt=typeof q.q==='function'?q.q(st.a):q.q, v=st.a[q.id];
+  let field='';
+  if(q.type==='scale') field=`<div class="scale${q.emoji?' emoji':''}" role="group">${[1,2,3,4,5].map(n=>`<button type="button" data-v="${n}" aria-pressed="${v===n}" aria-label="${n}">${q.emoji?FACES[n-1]:n}</button>`).join('')}</div><div class="scale-ends"><span>${q.lo}</span><span>${q.hi}</span></div>`;
+  if(q.type==='choice'||q.type==='multi') field=`<div class="opts" role="group">${q.opts.map(([k,l])=>`<button type="button" data-v="${k}" aria-pressed="${q.type==='multi'?!!(v&&v.includes(k)):v===k}">${l}</button>`).join('')}</div>`;
+  if(q.type==='text') field=`<label class="sr" for="sv-text" hidden>${qt}</label><textarea id="sv-text" maxlength="800">${esc(v||'')}</textarea>`;
+  box.innerHTML=`<div class="surv-top"><span>${st.s==='parents'?L('Padres','Parents'):L('Jugadores','Players')}</span><span style="font-variant-numeric:tabular-nums">${st.i+1} / ${qs.length}</span></div>
+   <div class="surv-bar"><span style="width:${100*(st.i+(answered(q)?1:0))/qs.length}%"></span></div>
+   <div class="surv-body"><div class="surv-q">${qt}</div>${q.hint?`<p class="surv-hint">${q.hint}</p>`:''}${field}
+   ${st.err?`<p class="surv-err">${st.err}</p>`:''}
+   <div class="surv-nav"><button class="back" type="button" data-act="back"${st.i===0?' disabled':''}>← ${L('Atrás','Back')}</button>
+   <button class="btn ${last?'gold':'navy'}" type="button" data-act="${last?'send':'next'}"${(!answered(q)||st.sending)?' disabled':''}>${st.sending?L('Enviando…','Sending…'):last?L('Enviar','Send'):L('Siguiente','Next')}</button></div></div>`;
+  const ta=box.querySelector('textarea'); if(ta) ta.addEventListener('input',()=>{st.a[q.id]=ta.value});
 }
-tabs.addEventListener('click',e=>{const b=e.target.closest('.day-tab');if(b)show(+b.dataset.i)});
-tabs.addEventListener('keydown',e=>{if(!['ArrowRight','ArrowLeft'].includes(e.key))return;const cur=+document.activeElement.dataset.i||0;const n=(cur+(e.key==='ArrowRight'?1:-1)+DAYS.length)%DAYS.length;show(n);tabs.children[n].focus()});
-const sd=parseInt(store.get('gatox-day'),10);show(sd>=0&&sd<DAYS.length?sd:0);
-
-/* places */
-const PLACES=[
- {img:'deerfield',when:L('Todos los días','Every day'),kind:L('Sede del camp · Aliado','Camp home · Partner'),name:'Deerfield Beach',
-  d:L('Nuestra ciudad sede y aliada. Nos hospedamos en el Wyndham Deerfield Beach Resort, frente al mar y cerca del muelle, y las clínicas son en el Johnny L. Tinger Community Center, un centro comunitario de la ciudad.','Our host city and partner. We stay at the beachfront Wyndham Deerfield Beach Resort near the pier, and the clinics are held at the Johnny L. Tinger Community Center, a city community center.'),p:'tinger'},
- {img:'zoo',when:L('Mar 6','Tue 6'),kind:L('Visita','Visit'),name:'Zoo Miami',
-  d:L('El zoológico más grande de la Florida, con animales de Asia, África y las Américas en ambiente tropical. Almorzamos allí.','Florida’s largest zoo, with animals from Asia, Africa and the Americas in a tropical setting. We have lunch there.'),p:'zoo'},
- {img:'sawgrass',when:L('Lun 5','Mon 5'),kind:L('Visita','Visit'),name:'Sawgrass Mills',
-  d:L('Uno de los centros comerciales outlet más grandes de Estados Unidos, con cientos de tiendas de marcas deportivas y de ropa.','One of the largest outlet malls in the United States, with hundreds of sportswear and clothing stores.'),p:'saw'},
- {img:'lynn',when:L('Mié 7','Wed 7'),kind:L('Universidad','University'),name:'Lynn University',
-  d:L('Universidad privada en Boca Raton, sede de los Fighting Knights (NCAA División II) y del último debate presidencial de 2012. Tour del campus y almuerzo.','A private university in Boca Raton, home of the Fighting Knights (NCAA Division II) and host of the final 2012 presidential debate. Campus tour and lunch.'),p:'lynn'},
- {img:'fau',when:L('Mié 7','Wed 7'),kind:L('Evento universitario','College event'),name:'FAU Paradise Madness',
-  d:L('La fiesta de inicio de temporada de los Owls de Florida Atlantic University, equipo que llegó al Final Four de la NCAA en 2023. En el Eleanor R. Baldwin Arena.','The season tip-off party for the Florida Atlantic University Owls, the team that reached the 2023 NCAA Final Four. Held at Eleanor R. Baldwin Arena.'),p:'fau'},
- {img:'kaseya',when:L('Jue 8','Thu 8'),kind:L('Partido NBA','NBA game'),name:'Miami Heat vs Pelicans',
-  d:L('En el Kaseya Center, casa del Miami Heat, frente a la bahía de Biscayne. Primero vemos la práctica del Heat (5:30 PM) y luego el partido a las 7:30 PM.','At the Kaseya Center, home of the Miami Heat, on Biscayne Bay. First we watch the Heat practice (5:30 PM), then the game at 7:30 PM.'),p:'kaseya'},
- {img:'lasolas',when:L('Lun 5','Mon 5'),kind:L('Visita','Visit'),name:'Las Olas Boulevard',
-  d:L('La calle más conocida de Fort Lauderdale: tiendas, restaurantes y galerías bajo las palmeras.','Fort Lauderdale’s best-known street: shops, restaurants and galleries under the palm trees.'),p:'olas'},
- {img:'hardrock',when:L('Lun 5','Mon 5'),kind:L('Visita','Visit'),name:'Seminole Hard Rock',
-  d:L('El famoso hotel en forma de guitarra en Hollywood, Florida. Cenamos en el Hard Rock Cafe.','The famous guitar-shaped hotel in Hollywood, Florida. Dinner at the Hard Rock Cafe.'),p:'hr'},
- {img:'beach',when:L('Vie 9','Fri 9'),kind:L('Entrenamiento','Training'),name:'Fort Lauderdale Beach',
-  d:L('Entrenamiento en las canchas de baloncesto de Central Beach, junto a la arena y el océano Atlántico.','Training on the Central Beach basketball courts, right by the sand and the Atlantic Ocean.'),p:'beach'},
-];
-document.getElementById('places').innerHTML=PLACES.map(x=>`<article class="place"><figure><img src="${x.img}.jpg" alt="${x.name}" loading="lazy"><span class="when">${x.when}</span></figure><div class="body"><span class="kind">${x.kind}</span><h3>${x.name}</h3><p>${x.d}</p><div class="addr"><span>${P[x.p][1]}</span><a href="${map(P[x.p][0]+', '+P[x.p][1])}" target="_blank" rel="noopener">${L('Mapa','Map')} ↗</a></div></div></article>`).join('');
-
-/* credits */
-const CR=[["Deerfield Beach","deerfield","LuizCent","CC BY-SA 4.0","https://commons.wikimedia.org/wiki/File:Deerfield_beach_pier.jpg"],["Zoo Miami","zoo","Averette","CC BY 3.0","https://commons.wikimedia.org/wiki/File:Flamingos_Miami_MetroZoo.jpg"],["Sawgrass Mills","sawgrass","Cmasi","CC BY-SA 4.0","https://commons.wikimedia.org/wiki/File:Sawgrass_Mills_180133.jpg"],["Lynn University","lynn","Handrieu","CC BY-SA 4.0","https://commons.wikimedia.org/wiki/File:Lynn_University_Boca_Raton_Entrance.jpg"],["FAU Arena","fau","Florida Atlantic University","Public domain","https://commons.wikimedia.org/wiki/File:FAU_Arena_2.jpeg"],["Kaseya Center","kaseya","Gatorfan252525","CC BY-SA 4.0","https://commons.wikimedia.org/wiki/File:Kaseya_Center_prior_to_a_Miami_Heat_game_during_the_2024-25_season.jpg"],["Las Olas Blvd","lasolas","Infrogmation","CC BY-SA 4.0","https://commons.wikimedia.org/wiki/File:Las_Olas_Boulevard,_Fort_Lauderdale,_Florida_02.jpg"],["Guitar Hotel","hardrock","Benoît Prieur","CC0","https://commons.wikimedia.org/wiki/File:The_Guitar_Hotel_depuis_l%27autoroute_en_f%C3%A9vrier_2022.JPG"],["Fort Lauderdale Beach","beach","EgorovaSvetlana","CC BY-SA 4.0","https://commons.wikimedia.org/wiki/File:Central_Beach_Fort_Lauderdale_Beach_Florida_Atlantic_Coast.jpg"]];
-document.getElementById('credits').innerHTML=CR.map(c=>`<li>${c[0]}: <a href="${c[4]}" target="_blank" rel="noopener">${c[2]}</a>, ${c[3]}, via Wikimedia Commons</li>`).join('');
+async function send(){
+  if(!SURVEY_ENDPOINT){st.err=L('La encuesta todavía no está conectada. Inténtalo más tarde.','The survey isn’t connected yet. Please try again later.');render();return}
+  const qs=S[st.s].qs, out={};
+  qs.forEach(q=>{const v=st.a[q.id]; const lab=k=>(q.opts.find(o=>o[0]===k)||[])[2]||k;
+    out[q.id]=q.type==='multi'?(v||[]).map(lab).join(', '):q.type==='choice'?lab(v):q.type==='text'?String(v||'').trim().slice(0,800):v});
+  st.sending=true;st.err='';render();
+  try{
+    await fetch(SURVEY_ENDPOINT,{method:'POST',mode:'no-cors',headers:{'Content-Type':'text/plain;charset=utf-8'},body:JSON.stringify({survey:st.s,lang:app.dataset.lang,answers:out})});
+    st.done=true;
+  }catch(e){st.err=L('No se pudo enviar. Revisa tu conexión e inténtalo de nuevo.','Couldn’t send. Check your connection and try again.')}
+  st.sending=false;render();
+}
+box.addEventListener('click',e=>{
+  const b=e.target.closest('button'); if(!b||b.disabled) return;
+  const q=S[st.s].qs[st.i];
+  if(b.dataset.act==='back'){st.i--;st.err='';render();return}
+  if(b.dataset.act==='next'){st.i++;render();return}
+  if(b.dataset.act==='send'){send();return}
+  if(b.dataset.act==='again'){pick(st.s);return}
+  if(b.dataset.v==null) return;
+  if(q.type==='multi'){const cur=st.a[q.id]||[];st.a[q.id]=cur.includes(b.dataset.v)?cur.filter(x=>x!==b.dataset.v):[...cur,b.dataset.v];render();return}
+  st.a[q.id]=q.type==='scale'?+b.dataset.v:b.dataset.v; render();
+  // single-answer questions move ahead on their own
+  if(st.i<S[st.s].qs.length-1) setTimeout(()=>{if(S[st.s].qs[st.i]===q){st.i++;render()}},280);
+});
+tabs.forEach(b=>b.addEventListener('click',()=>pick(b.dataset.s)));
+function fromHash(){const h=location.hash.slice(1);
+  if(h==='padres'||h==='parents'){pick('parents');document.getElementById('encuesta').scrollIntoView()}
+  else if(h==='jugadores'||h==='players'||h==='estudiantes'){pick('students');document.getElementById('encuesta').scrollIntoView()}}
+window.addEventListener('hashchange',fromHash);
+pick('parents');fromHash();
+})();
 
 /* copy buttons */
 document.querySelectorAll('[data-copy]').forEach(b=>b.addEventListener('click',()=>{
